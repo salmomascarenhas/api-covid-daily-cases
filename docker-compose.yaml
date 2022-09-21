@@ -19,5 +19,4 @@ services:
     volumes:
       - .:/app
     depends_on:
-      - mongo
       - postgres
