@@ -20,4 +20,7 @@ In the root of the project open the terminal and execute the commands below.
 	$ docker run -p 3000:3000 -v $(pwd):/app app-test
 
 ## Referência
-[README REFERÊNCIA](https://lab.coodesh.com/salmo/covid-daily-cases-20220127/-/blob/main/README.md)
+
+> [README REFERÊNCIA](https://lab.coodesh.com/salmo/covid-daily-cases-20220127/-/blob/main/README.md)
+
+> This is a challenge by [Coodesh](https://coodesh.com/)
