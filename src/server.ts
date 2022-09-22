@@ -1,13 +1,4 @@
-import express, { Request, Response } from 'express'
-import { StatusCodes } from 'http-status-codes'
+import 'dotenv/config'
+import { app } from "./app"
 
-const PORT = process.env.API_PORT || 3000
-const app = express()
-
-app.get('/', (request: Request, response: Response) => {
-    return response
-        .status(StatusCodes.OK)
-        .send({ message: 'Backend Challenge 2021 🏅 - Covid Daily Cases' })
-})
-
-app.listen(PORT, () => console.log(`API is running on PORT ${PORT}!`))
+app.listen(process.env.API_PORT, () => console.log(`API is running on PORT ${process.env.API_PORT}!`))
