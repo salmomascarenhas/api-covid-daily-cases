@@ -1,28 +1,25 @@
 import 'dotenv/config'
 import express from 'express'
+import path from 'path'
 import 'reflect-metadata'
 import { createConnection } from './database'
+import { CovidVariant } from './database/entities/CovidVariant.entity'
 import { routes } from './routes'
+import { parseCsv } from './shared/parseCsv'
 
 const app = express()
 
-createConnection(process.env.POSTGRES_HOST)
-// .then(async (dataSource) => {
-//     const covidVariant = new CovidVariant()
+createConnection(process.env.POSTGRES_HOST).then(async (dataSource) => {
+    if (dataSource.isInitialized) dataSource.runMigrations()
 
-//     covidVariant.date = new Date(Date.parse('01/01/2022'))
-//     covidVariant.location = 'Brazil'
-//     covidVariant.variante = 'Ômicron'
-//     covidVariant.num_sequences = 5000
-//     covidVariant.perc_sequences = 50
-//     covidVariant.num_sequences_total = 100
+    const pathFile = path.join(process.cwd() + '/tmp' + '/covid-variants.csv')
+    const variantRepository = dataSource.getRepository(CovidVariant)
+    const variants: CovidVariant[] = await parseCsv(pathFile)
 
-//     console.log(await dataSource.getRepository(CovidVariant).save(covidVariant))
-
-// })
-// .catch(error => {
-//     console.log(error)
-// })
+    // await variantRepository.save(variants, { chunk: 1000 })
+})
+    .catch(error => console.log(error))
+    .finally(() => { console.log('Database has updated with CSV.') })
 
 app.use(express.json())
 
