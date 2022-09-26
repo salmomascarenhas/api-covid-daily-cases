@@ -15,6 +15,10 @@ export class CreateCovidVariant1663811712604 implements MigrationInterface {
                         default: 'uuid_generate_v4()'
                     },
                     {
+                        name: 'variant',
+                        type: 'varchar'
+                    },
+                    {
                         name: 'location',
                         type: 'varchar'
                     },
@@ -24,15 +28,15 @@ export class CreateCovidVariant1663811712604 implements MigrationInterface {
                     },
                     {
                         name: 'num_sequences',
-                        type: 'int'
+                        type: 'numeric'
                     },
                     {
                         name: 'perc_sequences',
-                        type: 'decimal'
+                        type: 'float'
                     },
                     {
                         name: 'num_sequences_total',
-                        type: 'int'
+                        type: 'numeric'
                     }
                 ]
             })
