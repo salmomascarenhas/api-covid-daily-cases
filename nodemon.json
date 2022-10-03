@@ -6,5 +6,5 @@
     "ignore": [
         "build"
     ],
-    "exec": "ts-node ./src/server.ts"
+    "exec": "MODE=development ts-node ./src/server.ts"
 }
