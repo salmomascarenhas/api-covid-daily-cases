@@ -18,9 +18,9 @@ covidVariantsRouters.get(
 covidVariantsRouters.get(
     '/cases/:date/cumulative',
     celebrate({
-        [Segments.PARAMS]: {
-            date: Joi.date().required(),
-        },
+        [Segments.PARAMS]: Joi.object({
+            date: Joi.date().raw().required()
+        }),
     }),
     covidVariantsController.cumulativeCasesByDate
 )
