@@ -6,6 +6,8 @@
 ## Sobre o desafio
 API Rest que utiliza o histórico de casos de Covid ([Kaggle](https://www.kaggle.com/yamqwe/omicron-covid19-variant-daily-cases))  para exibir o número de casos por país, dia e variante.
 
+- Vídeo de Apresentação: https://www.loom.com/embed/fd35d467c9e145f19eb42a0c25fe6129
+
 ## Rodando a aplicação em ambiente Local Linux
 ### Instalando o Docker ###
 
