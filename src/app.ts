@@ -22,8 +22,6 @@ createConnection(process.env.POSTGRES_HOST).then(async (dataSource) => {
         // Parseing CSV with script.
         const variants: CovidVariant[] = await parseCsv(pathFile)
 
-        dataSource.runMigrations()
-
         // Saving dataframe at in database.
         await ormRepository.save(variants, { chunk: 1000 })
     }
