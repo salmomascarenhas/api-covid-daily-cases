@@ -188,7 +188,7 @@ Os _containers_ gerados são:
   - Biblioteca Stream para parsear CSV.
 + [Open API 3](https://swagger.io/)
   - Biblioteca para documentar API Rest.
- + [ApiCache](https://github.com/kwhitley/apicache)
++ [ApiCache](https://github.com/kwhitley/apicache)
   - Biblioteca simples para cache de endpoints.
 
 #### Postgres:
